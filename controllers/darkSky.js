@@ -17,7 +17,7 @@ module.exports = {
             var time = moment.unix(dataWeather.time).format("DD-MM-YYYY");
             var sunrise = moment.unix(dataWeather.sunriseTime).format("DD-MM-YYYY HH:mm:ss")
             var sunset = moment.unix(dataWeather.sunsetTime).format("DD-MM-YYYY HH:mm:ss")
-            console.log(time)
+            // console.log(time)
 
             var weather = {
                             location:response.data.timezone,
@@ -29,7 +29,7 @@ module.exports = {
                             sunriseTime:sunrise,
                             sunsetTime:sunset
                         }
-            console.log(weather);
+            // console.log(weather);
             
             res.json(response.data);
         })
