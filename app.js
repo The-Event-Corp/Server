@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var usersRouter = require("./routes/users");
 var indexRouter = require('./routes/index');
+var eventRouter = require('./routes/event');
 
 var app = express();
 
@@ -27,7 +28,9 @@ db.once('open', () => {
   console.log("Connected dabatase success")
 })
 
-app.use('/api', indexRouter);
+// app.use('/api', indexRouter);
+app.use('/api', usersRouter);
+app.use('/api/event', eventRouter);
 
 
 // catch 404 and forward to error handler
@@ -46,7 +49,7 @@ app.use(function(err, req, res, next) {
   res.send("error");
 });
 
-app.listen(3000, () => console.log("app listening on port 3000!"));
+// app.listen(3000, () => console.log("app listening on port 3000!"));
 
 module.exports = app;
 
