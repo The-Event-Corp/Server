@@ -7,6 +7,7 @@ var logger = require('morgan');
 var usersRouter = require("./routes/users");
 var indexRouter = require('./routes/index');
 var eventRouter = require('./routes/event');
+var meetupRouter = require('./routes/meetup')
 
 var app = express();
 
@@ -31,6 +32,7 @@ db.once('open', () => {
 // app.use('/api', indexRouter);
 app.use('/api', usersRouter);
 app.use('/api/event', eventRouter);
+app.use('/api/meetup', meetupRouter)
 
 
 // catch 404 and forward to error handler
