@@ -5,11 +5,13 @@ const darksky = require('../controllers/darkSky')
 
 const { loginUser, registerUser, getDataUsers } = require('../controllers/users')
 
+const {quotes} = require('../controllers/quotes')
 /* GET users listing. */
 router.get('/getData', getDataUsers)
 router.post('/register', registerUser)
 router.post('/login', loginUser)
 router.get('/darksky',darksky.darkskyapi)
+router.get('/quotes',quotes)
 
 
 router.get('/', function(req, res, next) {
