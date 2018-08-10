@@ -3,9 +3,10 @@ var router = express.Router();
 
 const darksky = require('../controllers/darkSky')
 
-const { loginUser, registerUser, getDataUsers } = require('../controllers/users')
+const { signinFacebook, loginUser, registerUser, getDataUsers } = require('../controllers/users')
 
 /* GET users listing. */
+router.post('/signin/facebook', signinFacebook)
 router.get('/getData', getDataUsers)
 router.post('/register', registerUser)
 router.post('/login', loginUser)
