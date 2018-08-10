@@ -4,12 +4,15 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var cors = require('cors')
 var usersRouter = require("./routes/users");
 var indexRouter = require('./routes/index');
 var eventRouter = require('./routes/event');
+var meetupRouter = require('./routes/meetup')
 
 var app = express();
 
+app.use(cors())
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -31,6 +34,7 @@ db.once('open', () => {
 // app.use('/api', indexRouter);
 app.use('/api', usersRouter);
 app.use('/api/event', eventRouter);
+app.use('/api/meetup', meetupRouter)
 
 
 // catch 404 and forward to error handler

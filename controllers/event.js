@@ -62,7 +62,8 @@ module.exports = {
         // console.log("masuk eventbrite cate",events);
         res
         .status(200)
-        .json({ msg: 'get all event by category', data: result.data.events})
+        .json({ msg: 'get all event by category', data: result.data})
+
     })
     .catch(err=>{
         res.json(err)
