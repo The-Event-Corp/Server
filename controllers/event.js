@@ -63,6 +63,7 @@ module.exports = {
         res
         .status(200)
         .json({ msg: 'get all event by category', data: result.data})
+
     })
     .catch(err=>{
         res.json(err)
